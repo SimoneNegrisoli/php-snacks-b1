@@ -15,37 +15,27 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
 $basketMatches = [
     [
         'homeTeam' => 'CHICAGO BULLS',
-        'homePoints' => '120',
-        'visitingTeam' => 'BOSTON CELTICS',
-        'visitingPoints' => '30',
+        'guestTeam' => 'BOSTON CELTICS',
     ],
     [
         'homeTeam' => 'CHICAGO BULLS',
-        'homePoints' => '120',
-        'visitingTeam' => 'BOSTON CELTICS',
-        'visitingPoints' => '30',
+        'guestTeam' => 'BOSTON CELTICS',
     ],
     [
         'homeTeam' => 'CHICAGO BULLS',
-        'homePoints' => '120',
-        'visitingTeam' => 'BOSTON CELTICS',
-        'visitingPoints' => '30',
+        'guestTeam' => 'BOSTON CELTICS',
     ],
     [
         'homeTeam' => 'CHICAGO BULLS',
-        'homePoints' => '120',
-        'visitingTeam' => 'BOSTON CELTICS',
-        'visitingPoints' => '30',
+        'guestTeam' => 'BOSTON CELTICS',
     ],
     [
         'homeTeam' => 'CHICAGO BULLS',
-        'homePoints' => '120',
-        'visitingTeam' => 'BOSTON CELTICS',
-        'visitingPoints' => '30',
+        'guestTeam' => 'BOSTON CELTICS',
     ]
-]
+];
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,8 +49,16 @@ $basketMatches = [
 <body>
 
     <!-- SNACK1 -->
+    <h2>Snack 1</h2>
     <?php
+    foreach ($basketMatches as $basketMatch) {
 
+        $homePoints = rand(10, 120);
+        $guestPoints = rand(10, 120);
+
+        echo $basketMatch['homeTeam'] . '-' . $basketMatch['guestTeam'] . '|' . $homePoints . '-' . $guestPoints . '<br>';
+    }
+    ;
     ?>
 
 
