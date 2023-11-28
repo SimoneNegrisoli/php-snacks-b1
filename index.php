@@ -68,6 +68,9 @@ $basketMatches = [
         <input type="submit" value="Invia">
     </form>
     <?php
+    $name = null;
+    $mail = null;
+    $age = null;
     //mi prendo gli input e verifico che esistono
     if (isset($_GET['name']) && ($_GET['mail']) && ($_GET['age'])) {
         $name = $_GET["name"];
@@ -75,11 +78,14 @@ $basketMatches = [
         $age = $_GET["age"];
     }
 
-    if (strlen($name > 3) && filter_var($mail, FILTER_VALIDATE_EMAIL) && filter_var($age, FILTER_VALIDATE_INT)) {
-        echo 'Accesso riuscito';
-    } else {
-        echo 'Accesso negato';
+    if (!empty($name) && !empty($mail) && !empty($age)) {
+        if (strlen($name > 3) && filter_var($mail, FILTER_VALIDATE_EMAIL) && filter_var($age, FILTER_VALIDATE_INT)) {
+            echo 'Accesso riuscito';
+        } else {
+            echo 'Accesso negato';
+        }
     }
+
 
 
     ?>
