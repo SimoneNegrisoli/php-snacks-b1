@@ -60,8 +60,29 @@ $basketMatches = [
     }
     ;
     ?>
+    <h2>Snack2</h2>
+    <form action="index.php" method="GET">
+        <input type="text" name="name" placeholder="inserisci il tuo nome">
+        <input type="email" name="mail" placeholder="inserisci la tua mail">
+        <input type="text" name="age" placeholder="età">
+        <input type="submit" value="Invia">
+    </form>
+    <?php
+    //mi prendo gli input e verifico che esistono
+    if (isset($_GET['name']) && ($_GET['mail']) && ($_GET['age'])) {
+        $name = $_GET["name"];
+        $mail = $_GET["mail"];
+        $age = $_GET["age"];
+    }
+
+    if (strlen($name > 3) && filter_var($mail, FILTER_VALIDATE_EMAIL) && filter_var($age, FILTER_VALIDATE_INT)) {
+        echo 'Accesso riuscito';
+    } else {
+        echo 'Accesso negato';
+    }
 
 
+    ?>
 </body>
 
 </html>
